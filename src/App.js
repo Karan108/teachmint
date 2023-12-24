@@ -29,11 +29,7 @@ function App() {
       ),
     },
   ]);
-  return (
-    <RouterProvider router={appRouter}>
-      <h1>Hello</h1>
-    </RouterProvider>
-  );
+  return <RouterProvider router={appRouter} />;
 }
 
 export default App;
