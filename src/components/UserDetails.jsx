@@ -49,7 +49,13 @@ function UserDetails() {
     countries.then((e) => setTimeData((prev) => ({ ...prev, countrylist: e })));
   }, []);
 
-  console.log("karan", timeData);
+  const truncateText = (text, limit) => {
+    const words = text.split(" ");
+    if (words.length > limit) {
+      return words.slice(0, limit).join(" ") + "...";
+    }
+    return text;
+  };
 
   return (
     <div className="p-4">
@@ -131,7 +137,7 @@ function UserDetails() {
                 }}
               >
                 <div>{post.title}</div>
-                <div>{post.body}</div>
+                <div>{truncateText(post.body, 5)}</div>
               </div>
             ))}
         </div>
